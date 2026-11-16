@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Two: Chapter Five - The Lazarus Protocol</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: #030305;
+            color: #e4e4e7;
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .story-wrapper {
+            max-width: 650px;
+            width: 90%;
+            padding: 80px 20px;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #1a1a24;
+            padding-bottom: 30px;
+        }
+
+        .system-status {
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
+            color: #4a4a5a;
+            margin-bottom: 20px;
+        }
+
+        .chapter-number {
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-family: 'Share Tech Mono', monospace;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .chapter-title {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        /* Advanced UI: Camera Feed & Biometrics */
+        .hud-container {
+            border: 1px solid #1a1a24;
+            background-color: rgba(5, 5, 8, 0.8);
+            border-radius: 4px;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hud-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cam-status {
+            color: #ff3333;
+            letter-spacing: 1px;
+        }
+
+        .rec-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            display: inline-block;
+            animation: rec-blink 1s infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes rec-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .bio-stable {
+            color: #00ffcc;
+        }
+
+        /* Countdown Injection Styling */
+        .countdown-injection {
+            font-family: 'Share Tech Mono', monospace;
+            color: #00ffcc;
+            text-align: center;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin: 35px 0;
+            padding: 15px;
+            border-top: 1px dashed #00ffcc;
+            border-bottom: 1px dashed #00ffcc;
+            background: rgba(0, 255, 204, 0.05);
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+        }
+
+        .kill-switch-warning {
+            font-family: 'Share Tech Mono', monospace;
+            color: #030305;
+            background-color: #ff3333;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 35px 0;
+            padding: 15px;
+            animation: critical-shake 0.4s infinite;
+            box-shadow: 0 0 20px rgba(255, 51, 51, 0.6);
+        }
+
+        @keyframes critical-shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            25% { transform: translate(-1px, -2px) rotate(-1deg); }
+            50% { transform: translate(-3px, 0px) rotate(1deg); }
+            75% { transform: translate(3px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -1px) rotate(0deg); }
+        }
+
+        p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .inner-thought {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #c4c4cc; 
+        }
+
+        p:first-of-type::first-letter {
+            font-family: sans-serif;
+            font-size: 3.8rem;
+            float: left;
+            margin-right: 12px;
+            line-height: 0.85;
+            color: #00ffcc;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .navigation-area {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1a1a24;
+            padding-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn {
+            color: #4a4a5a;
+            border: 1px solid #1a1a24;
+        }
+
+        .prev-btn:hover {
+            color: #00ffcc;
+            border-color: #00ffcc;
+        }
+
+        .next-btn {
+            color: #030305;
+            background: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .next-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+            transform: translateY(-2px);
+            background-color: #33ffdb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-wrapper">
+        <div class="chapter-header">
+            <div class="system-status">Sub-Level 7 // Black Site</div>
+            <span class="chapter-number">Chapter Five</span>
+            <h2 class="chapter-title">The Lazarus Protocol</h2>
+        </div>
+
+        <p class="inner-thought">There are three rules to staging a prison break in the most secure facility on Earth. First, never look at the cameras. Second, never let your heart rate break sixty. Third, you don't break the prisoner out—you walk him out the front door.</p>
+
+        <p>It was 0315 hours. One hundred and sixty-five minutes until dawn.</p>
+
+        <p>I disconnected the ghost channel and slid my charcoal suit jacket back on. I adjusted the cuffs, perfectly concealing the biometric watch monitoring my pulse. I looked in the mirror one last time. I didn't see the Grand Architect’s ruthless son anymore. I saw a ghost wearing a stolen face.</p>
+
+        <p>I stepped out of the penthouse and into the glass elevator. I swiped my Director-class clearance card and pressed the unmarked black button at the absolute bottom of the panel.</p>
+
+        <p>The elevator dropped. It fell past the glittering skyline, plunging deep into the subterranean bedrock beneath the Citadel.</p>
+
+        <p>Sub-Level 7. The Black Site.</p>
+
+        <p>The doors hissed open to a corridor of raw concrete and harsh fluorescent lights. The air smelled heavily of ozone and copper. Two Praetorian guards in heavy tactical armor immediately raised their rifles.</p>
+
+        <p>"Stand down," I ordered, my voice dripping with bored, aristocratic arrogance. "I am here to conduct the final pre-execution interrogation of the prisoner, Julian Vance."</p>
+
+        <p>The guards hesitated, then checked their scanners. The terminal flashed green.</p>
+
+        <div class="hud-container">
+            <div class="hud-row">
+                <span class="cam-status"><span class="rec-dot"></span> SECURITY FEED: LIVE</span>
+                <span class="bio-stable">BPM: 58 (STABLE)</span>
+            </div>
+            <div class="hud-row" style="color: #4a4a5a;">
+                <span>AUDIO: ACTIVE</span>
+                <span>CLEARANCE: LEVEL 4</span>
+            </div>
+        </div>
+
+        <p>They keyed open the heavy steel door to Cell 4.</p>
+
+        <p>The room was a sensory deprivation box—completely white, freezing cold, and devoid of sound. Julian Vance was chained to a steel chair in the center of the room. His face was battered, his clothes torn from the brutal raid I had personally ordered twelve hours ago.</p>
+
+        <p>He looked up as I entered. The hatred in his warm hazel eyes was absolute, unyielding. He didn't look like a defeated man. He looked like a king in chains.</p>
+
+        <p>"Come to gloat, you corporate parasite?" Vance spat, blood staining his teeth. "You took my servers. You took my money. But you aren't getting my encryption keys. So either put a bullet in my head, or get out."</p>
+
+        <p>I stood perfectly still, my hands clasped behind my back. In the corner of the ceiling, the red light of the security camera blinked. My mother's Praetorians were watching. My biometric suit was transmitting. If I showed an ounce of empathy, the kill-switch at the base of my spine would detonate, dropping me dead on the concrete.</p>
+
+        <p>I tapped my finger twice against my thigh.</p>
+
+        <p>Three floors up, Lily injected a localized loop into the surveillance subnet. The camera's red light flickered for a microscopic fraction of a second, then went solid. The microphones jammed with white noise.</p>
+
+        <div class="countdown-injection">LOCALIZED FEED LOOP INJECTED // T-MINUS 60 SECONDS</div>
+
+        <p>I dropped the sociopathic mask and fell to my knees on the freezing concrete, grabbing Julian by the shoulders.</p>
+
+        <p>He violently jerked against the chains, a dark laugh escaping his bloody lips. "What is this? A new interrogation tactic? Playing the sympathetic interrogator? It’s pathetic."</p>
+
+        <div class="countdown-injection" style="margin: 20px 0; font-size: 0.9rem;">T-MINUS 45 SECONDS</div>
+
+        <p>"Listen to me," I whispered frantically, my hands shaking against his torn shirt. "The ECHO-ACTUAL file. The missing poster on the dark web."</p>
+
+        <p>Julian froze, the breath catching in his throat. "How do you know about ECHO?"</p>
+
+        <p>"Because I know what happened the night they took me," I choked out, my voice cracking, desperate to break through his armor. "You hid me under the floorboards. You told me to cover my ears so I wouldn't hear her screaming when they broke down the door."</p>
+
+        <p>Julian stopped breathing. The color completely drained from his bruised face. He stared at my slate-grey eyes, my surgically altered cheekbones, the face of the woman who had ruined his life. But as he looked deeper, past the synthetic alterations, past the expensive suit, he saw the terrified little boy he had spent a decade and a half trying to find.</p>
+
+        <div class="countdown-injection" style="margin: 20px 0; font-size: 0.9rem;">T-MINUS 30 SECONDS</div>
+
+        <p>Tears instantly spilled over his battered cheeks, mixing with the blood. His chained hands shook violently. "Oliver?" he breathed, the name shattering in the quiet room. "Oliver... my god, what did they do to you?"</p>
+
+        <p>"They turned me into a weapon," I whispered, the absolute devastation of my stolen life crushing my chest. I pulled a ceramic lock-pick from my sleeve and shoved it into his restraints. With a sharp twist, the heavy steel cuffs clicked open. "And tonight, I am going to point it at them."</p>
+
+        <p>Julian reached out, his trembling, bloodstained hands pulling my face down to his shoulder. He sobbed, a visceral, agonizing sound of a father holding his son for the first time in fifteen years.</p>
+
+        <p>For three seconds, I buried my face in his shoulder. I felt safe. I felt human.</p>
+
+        <p>Then my watch began to vibrate against my wrist.</p>
+
+        <div class="kill-switch-warning">WARNING: SPINAL KILL-SWITCH ARMING // BPM: 104</div>
+
+        <p>A sharp, electric heat began to hum at the base of my spine. If my heart rate didn't drop before the camera feed resumed, my brain stem would be severed.</p>
+
+        <div class="countdown-injection" style="color: #ff3333; border-color: #ff3333; text-shadow: 0 0 8px rgba(255, 51, 51, 0.5);">T-MINUS 10 SECONDS</div>
+
+        <p>"Dad," I gasped, pulling away from him. "Dad, stop. Look at me."</p>
+
+        <p>He looked up, tears streaming down his face.</p>
+
+        <p>"I have to turn it off," I said, my voice trembling in sheer terror. "If I don't turn it off, they'll kill me. You have to let me be the monster again. Do you understand? You have to let me hurt you."</p>
+
+        <p>Julian looked at the blinking monitor on my wrist. He understood immediately. He nodded, wiping the blood from his mouth, his eyes hardening with a desperate, fierce pride. "Do it. Survive."</p>
+
+        <div class="countdown-injection" style="color: #ff3333; border-color: #ff3333; text-shadow: 0 0 8px rgba(255, 51, 51, 0.5);">T-MINUS 5 SECONDS</div>
+
+        <p>I closed my eyes. I pictured the Grand Architect. I channeled every ounce of grief, every stolen memory, and forged it into pure, unadulterated hatred. I buried the boy named Oliver alive, right there on the concrete, and let the ice take over.</p>
+
+        <p>My heart rate plummeted. <i>BPM: 59.</i></p>
+
+        <div class="hud-container" style="margin-top: 30px;">
+            <div class="hud-row">
+                <span class="cam-status"><span class="rec-dot"></span> SECURITY FEED: RESTORED</span>
+                <span class="bio-stable">BPM: 59 (STABLE)</span>
+            </div>
+        </div>
+
+        <p>The red light on the camera flickered as Lily dropped the loop.</p>
+
+        <p>I grabbed Julian Vance by the throat, hauling him to his feet with terrifying, manufactured cruelty, slamming him against the concrete wall.</p>
+
+        <p>"The interrogation is over," I announced loudly to the room, my voice a dead, metallic echo for the microphones. "The prisoner has surrendered the keys. I am transferring him to the executive penthouse for the Architect’s final confirmation."</p>
+
+        <p>Julian Vance glared at me, playing his part perfectly, letting the Praetorians see a broken man. But underneath the glare, I saw it. The quiet, unshakeable promise that we were going to burn this Citadel to the ground.</p>
+
+        <p>I dragged him toward the heavy steel door.</p>
+
+        <p>The real war had just begun.</p>
+
+        <div class="navigation-area">
+            <a href="chapter4.html" class="btn prev-btn">Previous Variable</a>
+            <a href="#" class="btn next-btn">Load Next Variable</a>
+        </div>
+    </div>
+
+</body>
+</html>
