@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Two: Chapter Four - The Missing Poster</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: #030305;
+            color: #e4e4e7;
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .story-wrapper {
+            max-width: 650px;
+            width: 90%;
+            padding: 80px 20px;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #1a1a24;
+            padding-bottom: 30px;
+        }
+
+        .system-status {
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
+            color: #ff3333; /* Red alert for this chapter */
+            margin-bottom: 20px;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .chapter-number {
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-family: 'Share Tech Mono', monospace;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .chapter-title {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .inner-thought {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #c4c4cc; 
+        }
+
+        p:first-of-type::first-letter {
+            font-family: sans-serif;
+            font-size: 3.8rem;
+            float: left;
+            margin-right: 12px;
+            line-height: 0.85;
+            color: #ff3333; /* Red drop cap */
+            text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+        }
+
+        /* Medical Ledger Vault Style */
+        .archive-file {
+            background-color: #0a0a0f;
+            border-left: 3px solid #ff3333;
+            padding: 20px;
+            margin: 40px 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: #a0a0aa;
+        }
+
+        .archive-file span {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .classified-red {
+            color: #ff3333;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Ghost Channel Chat Interface */
+        .chat-window {
+            border: 1px solid #1a1a24;
+            background-color: #050508;
+            padding: 20px;
+            margin: 40px 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.95rem;
+            border-radius: 4px;
+        }
+
+        .chat-system {
+            color: #4a4a5a;
+            text-align: center;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .chat-lilian {
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+        
+        .chat-bruce {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .navigation-area {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1a1a24;
+            padding-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn {
+            color: #4a4a5a;
+            border: 1px solid #1a1a24;
+        }
+
+        .prev-btn:hover {
+            color: #00ffcc;
+            border-color: #00ffcc;
+        }
+
+        .next-btn {
+            color: #030305;
+            background: #ff3333; /* Red alert next button */
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+        }
+
+        .next-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 51, 51, 0.8);
+            transform: translateY(-2px);
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-wrapper">
+        <div class="chapter-header">
+            <div class="system-status">WARNING: BIOMETRIC ANOMALY DETECTED</div>
+            <span class="chapter-number">Chapter Four</span>
+            <h2 class="chapter-title">The Missing Poster</h2>
+        </div>
+
+        <p class="inner-thought">Control is an illusion. The Grand Architect believes she controls the Citadel because she owns the cameras, the guards, and the airspace. I thought I controlled the board because I learned how to move in her shadows.</p>
+        
+        <p class="inner-thought">We were both wrong. I was never a player. I wasn't even a piece.</p>
+
+        <p>It was 0200 hours. The Citadel was silent, bathed in the sterile, low-light glow of night protocols.</p>
+
+        <p>I sat alone in the study of the executive penthouse. I had stripped off the charcoal suit jacket, but I deliberately kept the biometric watch locked around my wrist. My pulse hummed at a steady, dead 60 beats per minute, feeding a continuous loop of compliance directly to my mother’s servers.</p>
+
+        <p>On the obsidian desk, the terminal illuminated my face in a pale, cybernetic cyan.</p>
+
+        <p>By noon, my orders had been executed flawlessly. Julian Vance’s decentralized tech grid had been seized. His life’s work was dismantled, his bank accounts drained, his reputation reduced to ash by the Council's media machine. The Architect had smiled at me over dinner, immensely proud of the monster she had raised.</p>
+
+        <p>She thought I was integrating Vance's grid into the Citadel. I wasn't. I was hollowing it out from the inside, searching its architecture to build my blind spot.</p>
+
+        <p>My fingers flew across the mechanical keyboard. As I bypassed the final layer of Vance’s encryption, I didn't find server routing protocols. I found a hidden, heavily fortified partition. A personal vault buried so deep in the code that it took up 40% of the entire grid's processing power just to keep it hidden from the Crescent Council.</p>
+
+        <p>I leaned forward. The glow of the screen reflected in my cold, grey eyes.</p>
+
+        <p>I ran the decryption sequence. The vault unlocked.</p>
+
+        <p>It wasn't financial blackmail. It wasn't weapons schematics. It was an archive of thousands of suppressed global media files, private investigator reports, and DNA algorithms spanning over fifteen years.</p>
+
+        <p>I opened the central file, labeled: <i>ECHO-ACTUAL</i>.</p>
+
+        <p>A high-resolution image rendered on the screen. It was an underground, black-market missing persons poster. The text was written in frantic, bold letters, begging anyone on the dark web for information.</p>
+
+        <p>Beneath the text was a digitally age-progressed photograph of a young boy who had been abducted from his bed fifteen years ago.</p>
+
+        <p>The air in my lungs turned to solid ice. My hands froze over the keyboard.</p>
+
+        <p>The boy in the digitally aged photo had the exact same jawline as me. The exact same cheekbones. But his eyes were a warm, piercing hazel.</p>
+
+        <p>I stared at the screen, my mind violently rejecting what I was looking at. I clicked the next file. It was a hacked medical ledger from a Council black-site laboratory, dated fourteen years ago.</p>
+
+        <div class="archive-file">
+            <span class="classified-red">[CLASSIFIED: ARCHITECT CLEARANCE ONLY]</span>
+            <span>SUBJECT:</span> Project Heir<br><br>
+            <span>PROCEDURE:</span> Complete memory suppression via neuro-chemical wiping. Surgical ocular pigmentation replacement (Hazel to Slate Grey) to ensure physical resemblance to the Grand Architect.<br><br>
+            <span>STATUS:</span> Successful. The subject believes she is his biological mother.
+        </div>
+
+        <p>A ringing noise started in my ears, drowning out the hum of the servers.</p>
+
+        <p class="inner-thought">"The resemblance was terrifying,"</p> <p>I had thought yesterday in the atrium.</p> <p class="inner-thought">"We had the exact same cold, calculated grey eyes."</p>
+
+        <p>She wasn't my mother. She was my captor. She had stolen me in the night, erased my mind, surgically altered my face, and molded me into a sociopathic weapon.</p>
+
+        <p>And Julian Vance—the man whose life I had ruthlessly, arrogantly destroyed twelve hours ago... the man I had framed for terrorism while my "mother" watched with a proud smile...</p>
+
+        <p>Julian Vance was my real father.</p>
+
+        <p>He hadn't built this decentralized grid to blind the Council's surveillance. He built it to find his missing son.</p>
+
+        <p>My biometric watch began to beep. <i>65 BPM... 72 BPM... 85 BPM.</i> My heart was violently accelerating, tearing through the ice in my veins.</p>
+
+        <p>Suddenly, a chat window forced itself open on the terminal, overriding my commands. Someone was already inside the vault. Someone had been waiting for me to find it.</p>
+
+        <div class="chat-window">
+            <div class="chat-system">CONNECTION ESTABLISHED // ENCRYPTION LEVEL: MAXIMUM</div>
+            <div class="chat-lilian">[LILIAN]: Your heart rate is spiking, Bruce. Breathe.</div>
+            <div class="chat-bruce">[BRUCE]: You knew.</div>
+            <div class="chat-bruce">[BRUCE]: You let me destroy him today. You let me order the raid on my own father.</div>
+            <div class="chat-lilian">[LILIAN]: If I had stopped you, she would have realized you were compromised. The kill-switch embedded in your cervical spine would have been detonated.</div>
+            <div class="chat-lilian">[LILIAN]: I didn't betray you in the tunnels, Bruce. I handed you over to her because Vance's extraction team was five minutes late, and it was the only way to keep you breathing.</div>
+        </div>
+
+        <p>I looked up from the screen, staring at my reflection in the dark window of the penthouse. I didn't know who was looking back at me. My name wasn't Bruce. My eyes weren't grey. Every memory, every instinct, every drop of loyalty I had ever felt was a manufactured lie.</p>
+
+        <p>The monitor flashed with one final message from Lily.</p>
+
+        <div class="chat-window">
+            <div class="chat-lilian">[LILIAN]: We don't just have to burn her empire anymore. We have to get your father out of the black site before she executes him at dawn.</div>
+        </div>
+
+        <div class="navigation-area">
+            <a href="chapter3.html" class="btn prev-btn">Previous Variable</a>
+            <a href="#" class="btn next-btn">Load Next Variable</a>
+        </div>
+    </div>
+
+</body>
+</html>

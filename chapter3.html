@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Two: Chapter Three - Absolute Zero</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: #030305;
+            color: #e4e4e7;
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .story-wrapper {
+            max-width: 650px;
+            width: 90%;
+            padding: 80px 20px;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #1a1a24;
+            padding-bottom: 30px;
+        }
+
+        .system-status {
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
+            color: #4a4a5a;
+            margin-bottom: 20px;
+        }
+
+        .chapter-number {
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-family: 'Share Tech Mono', monospace;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .chapter-title {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        /* Biometric UI styling */
+        .biometric-monitor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 255, 204, 0.05);
+            border: 1px solid #00ffcc;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            color: #00ffcc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.1) inset;
+        }
+
+        .bpm-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pulse-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #00ffcc;
+            border-radius: 50%;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(0.75); opacity: 0.5; }
+            20% { transform: scale(1); opacity: 1; }
+            40% { transform: scale(0.75); opacity: 0.5; }
+            60% { transform: scale(1); opacity: 1; }
+            80%, 100% { transform: scale(0.75); opacity: 0.5; }
+        }
+
+        p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .inner-thought {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: #c4c4cc; 
+        }
+
+        p:first-of-type::first-letter {
+            font-family: sans-serif;
+            font-size: 3.8rem;
+            float: left;
+            margin-right: 12px;
+            line-height: 0.85;
+            color: #00ffcc;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .dialogue-emphasis {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .navigation-area {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1a1a24;
+            padding-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn {
+            color: #4a4a5a;
+            border: 1px solid #1a1a24;
+        }
+
+        .prev-btn:hover {
+            color: #00ffcc;
+            border-color: #00ffcc;
+        }
+
+        .next-btn {
+            color: #030305;
+            background: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .next-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+            transform: translateY(-2px);
+            background-color: #33ffdb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-wrapper">
+        <div class="chapter-header">
+            <div class="system-status">Operational Briefing // 0600 Hours</div>
+            <span class="chapter-number">Chapter Three</span>
+            <h2 class="chapter-title">Absolute Zero</h2>
+        </div>
+
+        <div class="biometric-monitor">
+            <span>SUBJ: DIRECTOR BRUCE</span>
+            <span><span class="pulse-dot"></span> BPM: <span class="bpm-value">58</span> - STABLE</span>
+            <span>THREAT LVL: NULL</span>
+        </div>
+
+        <p class="inner-thought">The hardest part of being a monster isn't the violence. It's the mathematics of a heartbeat.</p>
+
+        <p>The Apex Boardroom was suspended on the 104th floor of the Citadel, walled entirely in glass. Seated around the massive obsidian table were six of the most powerful people on the planet. Bankers, military contractors, shadow politicians. The true Crescent Council.</p>
+
+        <p>And sitting at the head of the table, reigning over them all, was the Grand Architect.</p>
+
+        <p>I sat to her immediate right. My new suit was tailored flawlessly, a midnight charcoal that felt more like armor than silk. I leaned back in the leather chair, projecting absolute, terrifying boredom.</p>
+
+        <p>Lily stood exactly two feet behind my left shoulder, holding a secure datapad. She was close enough that I could smell the faint trace of vanilla and ozone on her skin. Close enough that, just yesterday, I would have reached back to brush my fingers against her wrist.</p>
+
+        <p>Now, I knew the sensors woven into my suit jacket were logging every microscopic spike in my blood pressure, transmitting it directly to my mother’s network.</p>
+
+        <p class="inner-thought">If your heart rate spikes around me, she will kill me.</p>
+
+        <p>I took a slow, calculated breath, dropping my pulse to a glacial 58 beats per minute. I let the ice coat my veins. I didn't look back at her.</p>
+
+        <p>"Julian Vance," a grey-haired man named Sterling said, tossing a holographic file onto the center of the table. "He is attempting to launch a decentralized tech grid in Northern Europe. If it goes live, it blinds our surveillance network across three countries. The man is refusing our buyouts."</p>
+
+        <p>"A sniper fixes a stubborn man quickly," another executive offered coldly.</p>
+
+        <p>"Too loud," the Grand Architect said, her voice smooth and bored. She turned her icy grey eyes toward me. It was a test. A public execution to see if the boy was truly dead. <span class="dialogue-emphasis">"What is your assessment, Director?"</span></p>
+
+        <p>The room went entirely silent. Six predators stared at me, waiting to see if the Architect's son was a wolf or a sheep.</p>
+
+        <p>I didn't blink. I didn't hesitate.</p>
+
+        <p>"Assassination makes him a martyr," I said, my voice cutting through the room like a razor blade. "We don't want him dead. We want him ruined."</p>
+
+        <p>I leaned forward, steepling my fingers on the obsidian glass. "I want Vance's servers raided on fabricated terrorism charges by 0900. I want his offshore bank accounts entirely drained by 0915. And by 1000, I want him standing in this exact room, begging to sign his decentralized tech over to us just to keep his daughter out of a black site."</p>
+
+        <p>Sterling blinked, visibly taken aback by the sheer, unadulterated ruthlessness of the counterplay. Even the Grand Architect paused, a slow, immensely proud smile creeping across her face.</p>
+
+        <p>"And who is going to coordinate this digital massacre?" Sterling asked.</p>
+
+        <p>I didn't turn my head. I simply raised a hand, snapping my fingers sharply in the air next to my ear. It was a demeaning, arrogant gesture—treating the girl I loved like an obedient dog.</p>
+
+        <p>"Lilian," I ordered, my voice laced with absolute, dismissive ice. "You heard the parameters. Execute the asset seizure. Have it finished before my coffee gets cold."</p>
+
+        <p>Lily stepped forward, her face a perfect, untouchable mask. As she reached down to place my coffee cup on the table, the inside of her wrist brushed against the cuff of my suit.</p>
+
+        <p>It was an electric shock straight to my nervous system.</p>
+
+        <p>My body wanted to react. My heart screamed to accelerate, to grab her hand and tear the room apart. I forced my muscles to go completely slack. I forced the ice to hold. I didn't look at her, staring only at the holographic projection on the table.</p>
+
+        <p>"Yes, Director," Lily said mechanically. "It will be done."</p>
+
+        <p>She turned and walked out of the boardroom. The Grand Architect watched the biometric feed on her own screen, looking for a spike, a flutter, a sign of weakness. She found nothing.</p>
+
+        <p>"Brilliant play, Bruce," my mother purred. "We will own his decentralized network by noon."</p>
+
+        <p>I took a slow sip of the black coffee.</p>
+
+        <p class="inner-thought">Yes, we will,</p> <p>I thought, looking at the blueprints of Julian Vance's un-traceable, decentralized tech grid.</p>
+
+        <p>The Architect thought I just secured her a new weapon. She didn't realize I just secured a blind spot. A network she couldn't monitor. The exact gasoline I needed to start a war in the dark.</p>
+
+        <div class="navigation-area">
+            <a href="chapter2.html" class="btn prev-btn">Previous Variable</a>
+            <a href="chapter4.html" class="btn next-btn">Load Next Variable</a>
+        </div>
+    </div>
+
+</body>
+</html>
